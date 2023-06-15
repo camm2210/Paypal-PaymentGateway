@@ -5,7 +5,7 @@ const {
   PAYPAL_API_SECRET,
 } = require("../config");
 
-const createOrderController = (req, res) => {
+const createOrderController = async (req, res) => {
   const order = {
     intent: "CAPTURE",
     purchase_units: [
@@ -31,9 +31,14 @@ const createOrderController = (req, res) => {
     },
   };
 
-  axios.post(``);
-
-  res.send("creating an order");
+  const response = await axios.post(`${PAYPAL_API}/v2/checkout/orders`, order, {
+    auth: {
+      username: PAYPAL_API_CLIENT,
+      password: PAYPAL_API_SECRET,
+    },
+  });
+  console.log(response);
+  res.send(response);
 };
 
 const cancelOrderController = (req, res) => {
