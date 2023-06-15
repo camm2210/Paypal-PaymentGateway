@@ -1,17 +1,16 @@
 const { Router } = require("express");
+const {
+  cancelOrderController,
+  captureOrderController,
+  createOrderController,
+} = require("../controllers/paymentsController");
 
 const router = Router();
 
-router.get("/create", (req, res) => {
-  res.send("creating an order");
-});
+router.get("/create", createOrderController);
 
-router.get("/cancel", (req, res) => {
-  res.send("canceling order");
-});
+router.get("/cancel", cancelOrderController);
 
-router.get("/capture", (req, res) => {
-  res.send("capturing order");
-});
+router.get("/capture", captureOrderController);
 
 module.exports = router;
