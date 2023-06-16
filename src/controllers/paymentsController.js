@@ -15,7 +15,7 @@ const createOrderController = async (req, res) => {
             currency_code: "USD",
             value: "100.20",
           },
-          description: "objeto", //necessary
+          description: "object", //necessary
         },
       ],
       application_context: {
@@ -38,7 +38,7 @@ const createOrderController = async (req, res) => {
       }
     );
 
-    res.json(response.data);
+    res.json(response.data.links[1].href);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -57,11 +57,11 @@ const captureOrderController = async (req, res) => {
     }
   );
   console.log(response.data);
-  res.send("capturing order");
+  res.send("capturing order"); //aquí redirecciona a la pagina pagado
 };
 
 const cancelOrderController = (req, res) => {
-  res.send("canceling order");
+  res.send("canceling order"); // redireccionar a la pagina de la vista para pago
 };
 
 module.exports = {
