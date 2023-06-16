@@ -7,7 +7,7 @@ const {
 
 const router = Router();
 
-router.get("/create", createOrderController);
+router.post("/create", createOrderController);
 
 router.get("/cancel", cancelOrderController);
 
