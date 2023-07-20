@@ -61,7 +61,7 @@ const captureOrderController = async (req, res) => {
 };
 
 const cancelOrderController = (req, res) => {
-  res.send("canceling order"); // redireccionar a la pagina de la vista para pago
+  res.send("canceling order"); // redireccionar a la pagina raíz de la app
 };
 
 module.exports = {
