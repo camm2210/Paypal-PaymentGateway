@@ -13,9 +13,9 @@ const createOrderController = async (req, res) => {
         {
           amount: {
             currency_code: "USD",
-            value: "100.20",// this info has yo ve sent from they front end
+            value: "100.20",// this info has yo ve sent from they front end (req.body)
           },
-          description: "object", //necessary this info has yo ve sent from they front end
+          description: "object", //necessary this info has yo ve sent from they front end (req.body)
         },
       ],
       application_context: {
